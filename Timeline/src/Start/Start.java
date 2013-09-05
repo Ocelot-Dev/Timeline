@@ -2,6 +2,9 @@ package Start;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,6 +13,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 @SuppressWarnings("serial")
 public class Start extends JPanel implements ActionListener{
@@ -105,7 +111,9 @@ public class Start extends JPanel implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		int i = e.getActionCommand()e.
+		String isString = e.getActionCommand();
+		int ID = Integer.decode(isString);
+		MakeDisplayGUI(ID);
 	}
 
 	public static JFrame MakeGUI()
@@ -121,28 +129,56 @@ public class Start extends JPanel implements ActionListener{
 		return mainFrame;
 	}
 	
-	public static JFrame MakeDisplayGUI(int ID)
+	public static void MakeDisplayGUI(int ID)
 	{
+		String[] Info = getLayout(ID);
 		System.out.println("Making GUI");
-		JFrame mainFrame = new JFrame("string");
-		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JFrame mainFrame = new JFrame(Info[0]);
+		mainFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		JLabel emptyLabel = new JLabel("");
-		emptyLabel.setPreferredSize(new Dimension(440,220));
+		emptyLabel.setPreferredSize(new Dimension(500,500));
 		mainFrame.getContentPane().add(emptyLabel, BorderLayout.CENTER);
+		mainFrame.getContentPane().add(new JLabel(convertToMultiline(Info[1])));
 		mainFrame.pack();
-		return mainFrame;
+		mainFrame.setVisible(true);
+	}
+	
+	public static String convertToMultiline(String orig)
+	{
+	    return "<html> <body>" + orig.replaceAll("\n", "<br>") + "</body> </html>";
 	}
 	
 	public static String[] getLayout(int id)
 	{
 		switch (id)
 		{
-		case 1: return new String[] {"Birth","1/29/1997","I was born on this day </ br> I was born by cesarean section in Kissimmee Florida"}; break;
-		case 2: return new String[] {"First Birthday","1/29/1998","This was my first birthday </ br> apperently i ate the cake very carefully"}; break;
-		case 3: return new String[] {"Internship at CHS","2007","I did an internship at CHS </ br> I internshiped for a week in the computer matinence class"}; break;
-		case 4: return new String[] {"First Year Of SMS","2009","This "
+		case 1: return new String[] {"Birth","1/29/1997 \n \n I was born on this day \n I was born by cesarean section in Kissimmee Florida"}; 
+		//break;
+		case 2: return new String[] {"First Birthday","1/29/1998 \n \n This was my first birthday \n apperently i ate the cake very carefully"}; 
+		//break;
+		case 3: return new String[] {"Internship at CHS","2007 \n \n I did an internship at CHS \n I internshiped for a week in the computer matinence class"};
+		//break;
+		case 4: return new String[] {"First Year Of SMS","2009 \n \nThis was my first year at Smith Middle School"}; 
+		//break;
+		case 5: return new String[] {"Started Programming","2009 \n \n I began programming small scripts on a linux machine"}; 
+		//break;
+		case 6: return new String[] {"Started going to online school","2010 \n \n I began going to an online charther school \n The school was called connections acadamy"}; 
+		//break;
+		case 7: return new String[] {"Started making math programs","2010 \n \nI began making math oriented programs \n Used them in math class"}; 
+		//break;
+		case 8: return new String[] {"Released first application","2011 \n \n I released a math oritened command line program \n called fastcal the program no longer works"}; 
+		//break;
+		case 9: return new String[] {"First year of CHS","2012 \n \n I began my first year of Cleburne High School \n this was also the first time in a physicall school in 2 years"}; 
+		//break;
+		case 10: return new String[] {"Grandfather died","2013 \n \n My grandfather dies due to a brain Hemorrhage while on blood thinners"}; 
+		//break;
+		case 11: return new String[] {"Started making programs with UIs","2012 \n \n i began making programs that have visual interfaces \n such as this one"}; 
+		//break;
+		case 12: return new String[] {"Graduation","2016 \n \n This sia future event"}; 
+		//break;
+		default: return new String[] {"Error","No Date \n \n An invalid option has been invoked"}; 
+		//break;
 		}
-		return null;
 	}
 	
 	public static void main(String[] args)
