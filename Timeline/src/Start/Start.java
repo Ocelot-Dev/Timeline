@@ -121,7 +121,7 @@ public class Start extends JPanel implements ActionListener{
 		return mainFrame;
 	}
 	
-	public static JFrame MakeDisplayGUI()
+	public static JFrame MakeDisplayGUI(int ID)
 	{
 		System.out.println("Making GUI");
 		JFrame mainFrame = new JFrame("string");
@@ -137,9 +137,10 @@ public class Start extends JPanel implements ActionListener{
 	{
 		switch (id)
 		{
-		case 1: return new String[] {"Birth","1/29/1997","I was born on this day </ br> I was born by cesarean section in Kissimmee Florida"}; 
-		case 2: return new String[] {"First Birthday","1/29/1998","This was my first birthday </ br> apperently i ate the cake very carefully"}; 
-		case 3: return null;
+		case 1: return new String[] {"Birth","1/29/1997","I was born on this day </ br> I was born by cesarean section in Kissimmee Florida"}; break;
+		case 2: return new String[] {"First Birthday","1/29/1998","This was my first birthday </ br> apperently i ate the cake very carefully"}; break;
+		case 3: return new String[] {"Internship at CHS","2007","I did an internship at CHS </ br> I internshiped for a week in the computer matinence class"}; break;
+		case 4: return new String[] {"First Year Of SMS","2009","This "
 		}
 		return null;
 	}
