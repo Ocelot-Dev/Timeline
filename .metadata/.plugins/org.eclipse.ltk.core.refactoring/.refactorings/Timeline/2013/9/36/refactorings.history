@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move element &apos;&apos; to &apos;Start.Start.MakeGUI()&apos;&#x0D;&#x0A;- Original project: &apos;Timeline&apos;&#x0D;&#x0A;- Destination element: &apos;Start.Start.MakeGUI()&apos;&#x0D;&#x0A;- Original element: &apos;Start.Start.actionPerformed(...)&apos;&#x0D;&#x0A;- Textual move only&#x0D;&#x0A;- Update references to refactored element" description="Move method" destination="/src&lt;Start{Start.java[Start~MakeGUI" element1="/src&lt;Start{Start.java[Start~actionPerformed~QActionEvent;" flags="589830" id="org.eclipse.jdt.ui.move" members="1" policy="org.eclipse.jdt.ui.moveMembers" stamp="1378351310432" version="1.0"/>
-</session>

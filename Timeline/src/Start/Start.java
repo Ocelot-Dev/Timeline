@@ -1,6 +1,5 @@
 package Start;
 
-import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,9 +7,9 @@ import java.awt.event.ActionListener;
 import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class Start extends JPanel implements ActionListener{
 
 	public Start()
@@ -105,7 +104,7 @@ public class Start extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Button pressed");
 	}
 
 	public static JFrame MakeGUI()
@@ -113,11 +112,12 @@ public class Start extends JPanel implements ActionListener{
 		System.out.println("Making GUI");
 		JFrame mainFrame = new JFrame("William's Timeline");
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		JLabel emptyLabel = new JLabel("");
-		emptyLabel.setPreferredSize(new Dimension(568, 100));
-		mainFrame.getContentPane().add(emptyLabel, BorderLayout.CENTER);
+		//JLabel emptyLabel = new JLabel("");
+		//emptyLabel.setPreferredSize(new Dimension(568, 500));
+		//mainFrame.getContentPane().add(emptyLabel, BorderLayout.CENTER);
 		Start buttons = new Start();
 		buttons.setOpaque(true);
+		buttons.setPreferredSize(new Dimension(440,220));
 		mainFrame.setContentPane(buttons);
 		mainFrame.pack();
 		return mainFrame;
