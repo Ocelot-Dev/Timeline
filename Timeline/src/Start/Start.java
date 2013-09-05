@@ -1,5 +1,6 @@
 package Start;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
@@ -112,9 +114,6 @@ public class Start extends JPanel implements ActionListener{
 		System.out.println("Making GUI");
 		JFrame mainFrame = new JFrame("William's Timeline");
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//JLabel emptyLabel = new JLabel("");
-		//emptyLabel.setPreferredSize(new Dimension(568, 500));
-		//mainFrame.getContentPane().add(emptyLabel, BorderLayout.CENTER);
 		Start buttons = new Start();
 		buttons.setOpaque(true);
 		buttons.setPreferredSize(new Dimension(440,220));
@@ -122,6 +121,27 @@ public class Start extends JPanel implements ActionListener{
 		mainFrame.pack();
 		return mainFrame;
 	}
+	
+	public static JFrame MakeDisplayGUI()
+	{
+		System.out.println("Making GUI");
+		JFrame mainFrame = new JFrame("string");
+		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JLabel emptyLabel = new JLabel("");
+		emptyLabel.setPreferredSize(new Dimension(440,220));
+		mainFrame.getContentPane().add(emptyLabel, BorderLayout.CENTER);
+		mainFrame.pack();
+		return mainFrame;
+	}
+	
+	public static String[] getLayout(int id)
+	{
+		switch (id)
+		{
+		case 1: return new String[] {"Birth","1/29/1997","I was born on this day </ br> I was born by cesarean section in Kissimmee Florida"}; break;
+		case 2: return new String[] {"First Birthday","1/29/1998","This was my first birthday </ br> apperently i ate the cake very carefully"}; break;
+		case 3:
+		}
 	
 	public static void main(String[] args)
 	{
