@@ -105,8 +105,7 @@ public class Start extends JPanel implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		System.out.println("Button pressed");
+		int i = e.getActionCommand()e.
 	}
 
 	public static JFrame MakeGUI()
@@ -138,10 +137,12 @@ public class Start extends JPanel implements ActionListener{
 	{
 		switch (id)
 		{
-		case 1: return new String[] {"Birth","1/29/1997","I was born on this day </ br> I was born by cesarean section in Kissimmee Florida"}; break;
-		case 2: return new String[] {"First Birthday","1/29/1998","This was my first birthday </ br> apperently i ate the cake very carefully"}; break;
-		case 3:
+		case 1: return new String[] {"Birth","1/29/1997","I was born on this day </ br> I was born by cesarean section in Kissimmee Florida"}; 
+		case 2: return new String[] {"First Birthday","1/29/1998","This was my first birthday </ br> apperently i ate the cake very carefully"}; 
+		case 3: return null;
 		}
+		return null;
+	}
 	
 	public static void main(String[] args)
 	{
